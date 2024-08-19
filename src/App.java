@@ -1,11 +1,14 @@
 import java.net.CacheRequest;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import edu.lista.*;
 import edu.lista.carrinhodecompras.CarrinhoDeCompras;
 import edu.lista.catalogosdelivros.CatalogoLivros;
 import edu.lista.catalogosdelivros.Livro;
 import edu.lista.listadetarefas.ListaTarefas;
+import edu.lista.ordenacaodepessoas.OrdenacaoPessoas;
+import edu.lista.somadenumeros.SomaNumeros;
 
 public class App {
     public static void main(String[] args) {
@@ -84,7 +87,44 @@ public class App {
 
         System.out.println(catalogoLivros.pesquisarPorTitulo("titulo livro 3"));
 
+        System.out.println("****************************************");
 
+        SomaNumeros somaNumeros = new SomaNumeros();
+
+        somaNumeros.adicionarNumero(10);
+        somaNumeros.adicionarNumero(15);
+        somaNumeros.adicionarNumero(91);
+        somaNumeros.adicionarNumero(25);
+        somaNumeros.adicionarNumero(5);
+        somaNumeros.adicionarNumero(75);
+        somaNumeros.adicionarNumero(50);
+
+        System.out.println("A lista de números é: " + somaNumeros.exibirNumeros());
+
+        System.out.println("A soma dos números na lista é igual a: " + somaNumeros.calcularSoma());
+
+        System.out.println("O maior número é: " + somaNumeros.encontrarMaiorNumero());
+
+        System.out.println("O menor número é: " + somaNumeros.encontrarMenorNumero());
+
+        System.out.println("****************************************");
+
+        OrdenacaoPessoas ordernacaoPessoas = new OrdenacaoPessoas();
+
+        
+        ordernacaoPessoas.adicionarPessoa("Jonn", 39, 1.79);
+        ordernacaoPessoas.adicionarPessoa("Gustavo", 29, 1.76);
+        ordernacaoPessoas.adicionarPessoa("Leo", 43, 1.69);
+
+        System.out.println("As pessoas na lista são: " + ordernacaoPessoas.exibirNomeDasPessoas());
+
+        ordernacaoPessoas.ordenarPorIdade();
+
+        System.out.println("As pessoas na lista (após ordenação por idade) são: " + ordernacaoPessoas.exibirNomeDasPessoas());
+
+        ordernacaoPessoas.ordenarPorAltura();
+
+        System.out.println("As pessoas na lista (após ordenação por altura) são: " + ordernacaoPessoas.exibirNomeDasPessoas());
 
     }
 }
