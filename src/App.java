@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import edu.lista.*;
 import edu.lista.carrinhodecompras.CarrinhoDeCompras;
+import edu.lista.catalogosdelivros.CatalogoLivros;
+import edu.lista.catalogosdelivros.Livro;
 import edu.lista.listadetarefas.ListaTarefas;
 
 public class App {
@@ -35,6 +37,53 @@ public class App {
         System.out.println("O valor total deste carrinho é: " + carrinho.calcularValorTotal());
 
         carrinho.exibirItens();
+
+        System.out.println("****************************************");
+
+        //Criei duas novas classes, App2 e App3 para relembrar questão da hierarquia de classes.:
+        /*
+         * App3 extends App2, ou seja, App3 herda as caraterísticas de App2.
+         * 
+         * Será que eu posso definiar um novo objeto App3 inicilizando com um new App2?
+         *  R: NÃO
+         *  NÃO É POSSÍVEL CRIAR UMA CLASSE ESPECÍFICA INICIALIZANDO A MESMA COM UMA CLASSE MAIS GENÉRICA.
+         *  NO ENTANTO, UMA CLASSE MAIS GENERICA, PODE INICIALIZAR UMA CLASSE MAIS ESPECÍFICA.
+         */
+
+        // App3 novoApp3 = new App2(); //ERRO;
+
+        App2 novoApp3 = new App3("Novo App Três"); //NÃO-ERRO: App2 está mais acima na hierarquia, por isso é possível inicializá-la com construtor de App3
+        
+        //System.out.println(novoApp3.getNomeApp3()); //ERRO
+        /*  OBSERVAÇÃO: COMO EU CRIEI UM OBJETO App2, e o inicializei com App3, o método getNomeApp().
+            ESPECÍFICO DE APP3, NÃO ESTARÁ DISPONÍVEL.
+        */
+
+        novoApp3.setNomeApp2("Novo App Três -- Modificado");
+
+        System.out.println(novoApp3.getNomeApp2());
+
+        /*
+         * SÓ SERÁ POSSÍVEL IMPRIMIR O NOME, NO CASO, SE HOUVER UM MÉTODO GET NAME NA CLASSE MAIS ACIMA.
+         */
+        
+        System.out.println("****************************************");
+
+        CatalogoLivros catalogoLivros = new CatalogoLivros();
+
+        catalogoLivros.adicionarLivro("Titulo livro 1", "Autor livro 1", 2001);
+        catalogoLivros.adicionarLivro("Titulo livro 2", "Autor livro 1", 2002);
+        catalogoLivros.adicionarLivro("Titulo livro 3", "Autor livro 1", 2003);
+        catalogoLivros.adicionarLivro("Titulo livro 3", "Autor livro 2", 2004);
+        catalogoLivros.adicionarLivro("Titulo livro 5", "Autor livro 2", 2005);
+        catalogoLivros.adicionarLivro("Titulo livro 6", "Autor livro 3", 2006);
+
+        System.out.println(catalogoLivros.pesquisarPorAutor("autor livro 2"));
+
+        System.out.println(catalogoLivros.pesquisarPorIntervaloAnos(2002, 2005));
+
+        System.out.println(catalogoLivros.pesquisarPorTitulo("titulo livro 3"));
+
 
 
     }
