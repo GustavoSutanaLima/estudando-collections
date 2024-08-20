@@ -32,9 +32,13 @@ public class ConjuntoConvidados {
 
     public void removerConvidadoPorCodigoConvite(int codigoConviteRemover) {
         for (Convidado convidado : conjuntoConvidados) {
-            if (convidado.getCodigoConvite() == codigoConviteRemover) {
-                conjuntoConvidados.remove(convidado);
-            }
+            try {
+                if (convidado.getCodigoConvite() == codigoConviteRemover) {
+                    conjuntoConvidados.remove(convidado);
+                }
+            } catch (Exception e) {
+                System.out.println("Convidadao Não encontrado");
+            } 
         }
     }
     
