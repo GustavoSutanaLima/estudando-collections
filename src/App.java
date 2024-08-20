@@ -3,7 +3,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import edu.conjuntos.agendadecontatos.AgendaContatos;
 import edu.conjuntos.conjuntodeconvidados.ConjuntoConvidados;
+import edu.conjuntos.conjuntodepalavrasunicas.ConjuntoPalavrasUnicas;
 import edu.lista.*;
 import edu.lista.carrinhodecompras.CarrinhoDeCompras;
 import edu.lista.catalogosdelivros.CatalogoLivros;
@@ -167,5 +169,39 @@ public class App {
 
         setConvidados.exibirConvidados();
         setConvidados.contarConvidados();
+
+        System.out.println("****************************************");
+
+        ConjuntoPalavrasUnicas palavrasUnicas = new ConjuntoPalavrasUnicas();
+
+        palavrasUnicas.adicionarPalavra("Agosto");
+        palavrasUnicas.adicionarPalavra("Xícara");
+        palavrasUnicas.adicionarPalavra("Garrafa d'água");
+        palavrasUnicas.adicionarPalavra("Sonho");
+        palavrasUnicas.adicionarPalavra("Emprego");
+        palavrasUnicas.adicionarPalavra("emprego");
+        palavrasUnicas.adicionarPalavra("Home office");
+        palavrasUnicas.verificarPalavra("Agosto"); 
+        //Como a palavra agosto já foi adicionada, não é possível
+        //Acrescentá-la novamente;
+
+        System.out.println(palavrasUnicas.exibirPalavrasUnicas());
+
+        palavrasUnicas.removerPalavras("Xícara");
+        palavrasUnicas.removerPalavras("home office");
+
+        System.out.println(palavrasUnicas.exibirPalavrasUnicas());
+
+        System.out.println(palavrasUnicas.verificarPalavra("Emprego"));
+
+        System.out.println("****************************************");
+
+        AgendaContatos minhaAgenda = new AgendaContatos();
+
+        minhaAgenda.adicionarContato("Gustavo", 998845567);
+        minhaAgenda.adicionarContato("Mãe", 999999999);
+        minhaAgenda.adicionarContato("Pai", 888888888);
+
+        minhaAgenda.exibirContatos();
     }
 }
