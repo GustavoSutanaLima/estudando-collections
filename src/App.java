@@ -2,12 +2,15 @@ import java.net.CacheRequest;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+
+import edu.conjuntos.conjuntodeconvidados.ConjuntoConvidados;
 import edu.lista.*;
 import edu.lista.carrinhodecompras.CarrinhoDeCompras;
 import edu.lista.catalogosdelivros.CatalogoLivros;
 import edu.lista.catalogosdelivros.Livro;
 import edu.lista.listadetarefas.ListaTarefas;
 import edu.lista.ordenacaodepessoas.OrdenacaoPessoas;
+import edu.lista.ordenacaonumeros.OrdenacaoNumeros;
 import edu.lista.somadenumeros.SomaNumeros;
 
 public class App {
@@ -126,5 +129,43 @@ public class App {
 
         System.out.println("As pessoas na lista (após ordenação por altura) são: " + ordernacaoPessoas.exibirNomeDasPessoas());
 
+        System.out.println("****************************************");
+
+        OrdenacaoNumeros listaNumerosDois = new OrdenacaoNumeros();
+
+        listaNumerosDois.adicionarNumero(1123);
+        listaNumerosDois.adicionarNumero(456);
+        listaNumerosDois.adicionarNumero(789);
+        listaNumerosDois.adicionarNumero(101112);
+        listaNumerosDois.adicionarNumero(1);
+        listaNumerosDois.adicionarNumero(9685);
+        listaNumerosDois.adicionarNumero(13);
+
+        System.out.println(listaNumerosDois.retonarListaNumeros());
+
+        System.out.println(listaNumerosDois.ordenarAscendente());
+
+        System.out.println(listaNumerosDois.ordenarDescendente());
+
+        System.out.println(listaNumerosDois.ordenarDescendente());
+
+        System.out.println(listaNumerosDois.ordenarAscendente());
+
+        System.out.println("****************************************");
+
+        ConjuntoConvidados setConvidados = new ConjuntoConvidados();
+
+        setConvidados.adicionarConvidado("Gustavo", 123);
+        setConvidados.adicionarConvidado("Jonn", 456);
+        setConvidados.adicionarConvidado("Leo", 789);
+
+        setConvidados.exibirConvidados();
+
+        setConvidados.contarConvidados();
+
+        setConvidados.removerConvidadoPorCodigoConvite(123);
+
+        setConvidados.exibirConvidados();
+        setConvidados.contarConvidados();
     }
 }
