@@ -2,6 +2,7 @@ import java.net.CacheRequest;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 import edu.conjuntos.agendadecontatos.AgendaContatos;
 import edu.conjuntos.conjuntodeconvidados.ConjuntoConvidados;
@@ -14,6 +15,7 @@ import edu.lista.listadetarefas.ListaTarefas;
 import edu.lista.ordenacaodepessoas.OrdenacaoPessoas;
 import edu.lista.ordenacaonumeros.OrdenacaoNumeros;
 import edu.lista.somadenumeros.SomaNumeros;
+import edu.conjuntos.agendadecontatos.Contato;
 
 public class App {
     public static void main(String[] args) {
@@ -201,7 +203,37 @@ public class App {
         minhaAgenda.adicionarContato("Gustavo", 998845567);
         minhaAgenda.adicionarContato("Mãe", 999999999);
         minhaAgenda.adicionarContato("Pai", 888888888);
+        minhaAgenda.adicionarContato("Ana Lúcia", 123456);
+        minhaAgenda.adicionarContato("Ana Maria", 456789);
+        minhaAgenda.adicionarContato("Fabio", 159753);
+        minhaAgenda.adicionarContato("Fabiano", 1478963);
+        minhaAgenda.adicionarContato("Fabricio", 7423690);
 
-        minhaAgenda.exibirContatos();
+        
+
+        for (Contato contato : minhaAgenda.getAgenContatos()) {
+            System.out.println(contato.getNome() + " - " + contato.getNumeroTelefone());
+        }
+
+        Set<Contato> minhaPesquisa = minhaAgenda.pesquisarPorNome("Ana");
+
+        System.out.println("****************************************");
+
+        minhaAgenda.atualizarNumeroContato("Ana Lúcia", 999999);
+
+        for (Contato contato : minhaPesquisa) {
+            System.out.println(contato.getNome() + " - " + contato.getNumeroTelefone());
+        }  
+
+        ListaTarefas novaListaDetTarefas = new ListaTarefas();
+
+        novaListaDeTarefas.adicionarTarefa("Lavar o carro");
+        novaListaDeTarefas.adicionarTarefa("Construir casa do cachorro");
+        novaListaDeTarefas.adicionarTarefa("Lavar a bike");
+
+        novaListaDeTarefas.obterDescricoesTarefas();
+
+       
+
     }
 }
