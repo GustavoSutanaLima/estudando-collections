@@ -24,6 +24,11 @@ public class Tarefa {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return "Tarefa [descricao=" + descricao + ", status=" + status + "]";
+    }
+
     
 
 }

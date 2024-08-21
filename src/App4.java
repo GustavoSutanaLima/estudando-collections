@@ -1,4 +1,5 @@
 import edu.conjuntos.cadastrodeprodutos.CadastroProdutos;
+import edu.conjuntos.listadealunos.Aluno;
 import edu.conjuntos.listadealunos.GerenciadorAlunos;
 import edu.conjuntos.listadetarefas.ListaTarefas;
 
@@ -44,19 +45,18 @@ public class App4 {
 
         GerenciadorAlunos alunos = new GerenciadorAlunos();
 
-        alunos.adicionarAluno("Gustavo", 123, 81);
-        alunos.adicionarAluno("Jonn", 456, 79);
-        alunos.adicionarAluno("Leo", 789, 72);
-        alunos.adicionarAluno("André", 556, 84);
-        alunos.adicionarAluno("Lucas", 159, 92);
-        alunos.adicionarAluno("Guilherme", 753, 88);
+        alunos.adicionarAluno("Gustavo", 123L, 81);
+        alunos.adicionarAluno("Jonn", 456L, 79);
+        alunos.adicionarAluno("Alexandre", 888l, 67);
+        alunos.adicionarAluno("Leo", 789L, 72);
+        alunos.adicionarAluno("André", 556L, 84);
+        alunos.adicionarAluno("Lucas", 159L, 92);
+        alunos.adicionarAluno("Guilherme", 753L, 88);
+        alunos.adicionarAluno("Gabriel", 125L, 77);
 
-        
-        alunos.exibirAlunos();
-        System.out.println("--");
-        alunos.exibirAlunosPorNome();
-        System.out.println("--");
-        alunos.exibirAlunosPorMedia();
+        System.out.println(alunos.exibirAlunosPorNome());
+
+        System.out.println(alunos.exibirAlunosPorNota());
 
 
     }
