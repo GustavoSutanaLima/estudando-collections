@@ -1,5 +1,8 @@
+import edu.conjuntos.conjuntodeconvidados.ConjuntoConvidados;
+import edu.mapas.contadordepalavras.ContagemPalavras;
 import edu.mapas.dicionario.Dicionario;
 import edu.mapas.estoquedeprodutos.EstoqueProdutos;
+import edu.mapas.livrariaonline.LivrariaOnline;
 
 public class App5 {
     public static void main(String[] args) {
@@ -41,6 +44,34 @@ public class App5 {
         System.out.println("--");
         System.out.println(estoqueProdutos.obterProdutoMaiorQuantidadeValorTotalNoEstoque());
 
+        System.out.println("******************************************************");
 
+        ContagemPalavras countWords = new ContagemPalavras();
+
+        countWords.adicionarPalavra("Palavra 1", 123);
+        countWords.adicionarPalavra("Palavra 2", 456);
+        countWords.adicionarPalavra("Palavra 3", 79);
+
+        System.out.println(countWords.exibirContagemPalavras());
+
+        countWords.removerPalavra("Palavra 2");
+
+        
+        System.out.println(countWords.exibirContagemPalavras());
+
+        System.out.println(countWords.encontrarPalavraMaisFrequente());
+
+        
+        System.out.println("******************************************************");
+
+        LivrariaOnline onlineBookStore = new LivrariaOnline();
+
+        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Como-fazer-amigos-influenciar-pessoas/dp/8543108683", "Como fazer amigos e influenciar pessoas", "Dale Carnegie", 39.90);
+        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Orgulho-Preconceito-Acompanha-marcador-p%C3%A1ginas/dp/6584956229", "Orgulho e Preconceito - Edição de Luxo Almofadada", "Jane Austen", 24.57);
+        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Apostando-no-amor-Lynn-Painter/dp/8551009737", "Apostando no amor", "Lynn Painter", 47.42);
+    
+        onlineBookStore.removerLivro("Apostando no amor");
+        System.out.println("--");
+        System.out.println(onlineBookStore.exibirLivros());
     }
 }
