@@ -1,6 +1,8 @@
 package edu.mapas.livrariaonline;
 
 import java.util.Comparator;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Livro {
     //Atributos
@@ -36,9 +38,9 @@ public class Livro {
 
 }
 
-class ComparatorPorPreco implements Comparator<Livro> {
-    @Override
-    public int compare(Livro livro1, Livro livro2) {
-        return Double.compare(livro1.getPreco(), livro2.getPreco());
-    }
+class ComparatorPorPreco implements Comparator<Map.Entry<String, Livro>> {
+   @Override
+   public int compare(Entry<String, Livro> o1, Entry<String, Livro> o2) {
+       return Double.compare(o1.getValue().getPreco(), o2.getValue().getPreco());
+   }
 }

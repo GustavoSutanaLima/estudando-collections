@@ -2,8 +2,12 @@ package edu.mapas.livrariaonline;
 
 import java.util.Map;
 import java.util.SortedMap;
+import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.TreeMap;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class LivrariaOnline {
     //Atributo
@@ -39,7 +43,10 @@ public class LivrariaOnline {
     }
 
     public void exibirLivrosOrdenadosPorPreco() {
-        //Cria um novo TreeMap (ideia parecida com TreeSet)
-        var entryLivrariaOnlineOrganizada = livrariaOnline.entrySet();
+        //Cri uma array list com base no collection (set) gereado a partir do método entrySet()
+        List<Map.Entry<String, Livro>> livrariaOnlineOrganizaPreço = new ArrayList<>(livrariaOnline.entrySet());
+        
+        Collections.sort(livrariaOnlineOrganizaPreço, new ComparatorPorPreco());
+
     }
 }
