@@ -66,12 +66,18 @@ public class App5 {
 
         LivrariaOnline onlineBookStore = new LivrariaOnline();
 
-        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Como-fazer-amigos-influenciar-pessoas/dp/8543108683", "Como fazer amigos e influenciar pessoas", "Dale Carnegie", 39.90);
-        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Orgulho-Preconceito-Acompanha-marcador-p%C3%A1ginas/dp/6584956229", "Orgulho e Preconceito - Edição de Luxo Almofadada", "Jane Austen", 24.57);
-        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Apostando-no-amor-Lynn-Painter/dp/8551009737", "Apostando no amor", "Lynn Painter", 47.42);
-    
-        onlineBookStore.removerLivro("Apostando no amor");
+        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Como-fazer-amigos-influenciar-pessoas/dp/8543108683", "Como fazer amigos e influenciar pessoas", "Dale Carnegie", 100.90);
+        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Orgulho-Preconceito-Acompanha-marcador-p%C3%A1ginas/dp/6584956229", "Orgulho e Preconceito - Edição de Luxo Almofadada", "Jane Austen", 120.90);
+        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Apostando-no-amor-Lynn-Painter/dp/8551009737", "Apostando no amor", "Lynn Painter", 140.90);
+        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Como-fazer-amigos-influenciar-pessoas/dp/108683", "Rápido e devagar", "Dale Carnegie", 160.90);
+        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Orgulho-Preconceito-Acompanha-marcador-p%C3%A1ginas/dp/84956229", "Orgulho e Preconceito - Edição básica", "Jane Austen", 180.90);
+        onlineBookStore.adicionarLivro("https://www.amazon.com.br/Apostando-no-amor-Lynn-Painter/dp/1009737", "Apostando no amor: o amor não acabou", "Lynn Painter", 200.90);
+
         System.out.println("--");
         System.out.println(onlineBookStore.exibirLivros());
+        System.out.println("--");
+        System.out.println(onlineBookStore.exibirLivrosOrdenadosPorPreco());
+        System.out.println(onlineBookStore.pesquisarLivrosPorAutor("Dale Carnegie"));
+        System.out.println(onlineBookStore.obterLivrosMaisCaro());
     }
 }
